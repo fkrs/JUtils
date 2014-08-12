@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage - Demo 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- load jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- load utils -->
+    <script src="../utils.js"></script>
+    <script>
+      jQuery(document).ready(function() {
+        var value;
+        if(jQuery.storage.isset('testValue1')) {
+          value = JSON.stringify(jQuery.storage.get('testValue1'));
+          console.log(jQuery.storage.getValid('testValue1'));
+        } else {
+          value = '- No value set....yet! -';
+        }
+        jQuery('#storedValue').html(value);
+        jQuery('#demoStorage').val('');
+      });
+      function SetValue() {
+        var value;
+        jQuery.storage.set('testValue1', jQuery('#demoStorage').val());
+        if(jQuery.storage.isset('testValue1')) {
+          value = JSON.stringify(jQuery.storage.get('testValue1'));
+        } else {
+          value = '- No value set....yet! -';
+        }
+        jQuery('#storedValue').html(value);
+        jQuery('#demoStorage').val('');
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Storage - Demo 1</h1>
+    <div>
+      The last value was: <span id="storedValue"></span><br />
+      <br />
+      <em style="font-size: 80%;">The storage component will primarily check for and use localStorage.
+      If localStorage isn't available then it tries to use sessionStorage.
+      If sessionStorage fails as well then a simple key-value store is
+      setup within the module.<br />
+      The localStorage will preserve data until removed.<br />
+      The sessionStorage will preserve data until the current session ends<br />
+      The local key-value store will keep the data until the page is reloaded</em>
+    </div>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <form action="#">
+      <input type="text" name="demoStorage" id="demoStorage" value="" />
+      <button onclick="return SetValue();">Set value</button>
+    </form>
+    <ul>
+      <li><a href="./index.html" title="Index">Index</a></li>
+      <li><a href="./storage1.html" title="Storage 1">Storage 1</a></li>
+    </ul>
+  </body>
+</html>

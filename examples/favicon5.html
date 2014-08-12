@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Favicon - Demo 3</title>
+    <title>Favicon - Demo 5</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- load jQuery -->
@@ -9,12 +9,18 @@
     <!-- load utils -->
     <script src="../utils.js"></script>
     <script>
-      jQuery.faviconAdd('./favicon.svg');
+      jQuery(document).ready(function() {
+        jQuery(".favicon").faviconAnimationAdd({start: true, delay: 1000});
+      });
     </script>
   </head>
   <body>
-    <h1>Favicon - Demo 3</h1>
-    Loads an svg image to use as a favicon before the document has completed loading
+    <h1>Favicon - Demo 5</h1>
+    Load images with the class favicon from the page and use them as an animated favicon.
+    <div>
+      <img src="./favicon.png" class="favicon" />
+      <img src="./favicon_blue.svg" class="favicon" />
+    </div>
     <hr />
     <ul>
       <li><a href="./index.html" title="Index">Index</a></li>

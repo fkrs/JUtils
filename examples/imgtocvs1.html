@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image to canvas - Demo 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- load jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- load utils -->
+    <script src="../utils.js"></script>
+    <script>
+      jQuery(document).ready(function() {
+        jQuery("img").imageToCanvas('#canvasArea').attr('border', '4px');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Image to canvas - Demo 1</h1>
+    <div style="border: 1px solid #cccccc;">
+      <img src="./favicon.svg" alt="This is the loaded image" />
+    </div>
+    <div>
+      Loads the above image and converts it into a canvas.
+    </div>
+    <br />
+    <br />
+    <br />
+    <div id="canvasArea" style="border: 1px solid #cccccc;">
+      This is the canvas area where the above images will be places as canvas
+      <br />
+    </div>
+    <hr />
+    <ul>
+      <li><a href="./index.html" title="Index">Index</a></li>
+      <li><a href="./imgtocvs1.html" title="Image to canvas 1">Image to canvas 1</a></li>
+      <li><a href="./imgtocvs2.html" title="Image to canvas 2">Image to canvas 2</a></li>
+    </ul>
+  </body>
+</html>
